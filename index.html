@@ -9,7 +9,6 @@
     <h1>Заполнение данных банковской карты</h1>
 
     <div class="main">
-        <!-- ФОРМА -->
         <form id="cardForm">
             <label>Название банка
                 <input type="text" id="bank" placeholder="Сбербанк" required>
@@ -29,8 +28,9 @@
                        placeholder="1234 5678 9012 3456" required>
             </label>
 
-            <label>Имя держателя
-                <input type="text" id="holder" placeholder="IVAN IVANOV" required>
+            <label>Имя держателя (только латиница)
+                <input type="text" id="holder" placeholder="IVAN IVANOV"
+                       pattern="[A-Za-z\s]+" required>
             </label>
 
             <label>Срок действия
@@ -49,7 +49,7 @@
         <div class="card" id="cardPreview">
             <div class="card-top">
                 <span id="prevBank">БАНК</span>
-                <span id="prevSystem" class="sys">СИСТЕМА</span>
+                <img id="prevSystemLogo" class="sys-logo" alt="">
             </div>
             <div class="chip"></div>
             <div class="num" id="prevNumber">#### #### #### ####</div>
