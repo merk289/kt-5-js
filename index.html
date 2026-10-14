@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Данные банковской карты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Заполнение данных банковской карты</h1>
+
+    <div class="main">
+        <!-- ФОРМА -->
+        <form id="cardForm">
+            <label>Название банка
+                <input type="text" id="bank" placeholder="Сбербанк" required>
+            </label>
+
+            <label>Платёжная система
+                <select id="system" required>
+                    <option value="">-- выберите --</option>
+                    <option value="Visa">Visa</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Мир">Мир</option>
+                </select>
+            </label>
+
+            <label>Номер карты (16 цифр)
+                <input type="text" id="number" maxlength="19"
+                       placeholder="1234 5678 9012 3456" required>
+            </label>
+
+            <label>Имя держателя
+                <input type="text" id="holder" placeholder="IVAN IVANOV" required>
+            </label>
+
+            <label>Срок действия
+                <div class="exp">
+                    <select id="month" required>
+                        <option value="">ММ</option>
+                    </select>
+                    <select id="year" required>
+                        <option value="">ГГ</option>
+                    </select>
+                </div>
+            </label>
+
+            <button type="submit">Отправить</button>
+        </form>
+        <div class="card" id="cardPreview">
+            <div class="card-top">
+                <span id="prevBank">БАНК</span>
+                <span id="prevSystem" class="sys">СИСТЕМА</span>
+            </div>
+            <div class="chip"></div>
+            <div class="num" id="prevNumber">#### #### #### ####</div>
+            <div class="card-bottom">
+                <span id="prevHolder">ИМЯ ДЕРЖАТЕЛЯ</span>
+                <span id="prevExp">ММ/ГГ</span>
+            </div>
+        </div>
+    </div>
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Банк</th>
+                <th>Система</th>
+                <th>Номер карты</th>
+                <th>Держатель</th>
+                <th>Срок</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
